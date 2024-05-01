@@ -1,0 +1,6 @@
+A line starting with a character and with 3.14
+17 does not start with a character
+(comment)
+(comment with space in between)
+(  comment9)
+()

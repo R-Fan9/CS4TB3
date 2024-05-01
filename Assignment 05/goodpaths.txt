@@ -1,0 +1,6 @@
+/aaa//bb/c/
+aaa/b.b/../cc/./dd
+a45/b.b/../cc/./dd/.
+./////def/ghi///jkl//mno/pqr/../../././../../ghi/./jkl////
+/.../.abc/./123/456/789/../../
+./test/ing

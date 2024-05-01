@@ -1,0 +1,89 @@
+
+\documentclass{article}
+\usepackage[rounded]{syntax}
+\usepackage{url}
+
+\title{COMPSCI 3TB3/4TB3/6TB3 Assignment 2 Question 3}
+\author{Ricky Fan}
+
+\begin{document}
+\maketitle
+
+\begin{grammar}
+    <expression> ::= ['+' | '-'] <term> \{('+' | '-') <term>\}
+ 
+   <term> ::= <factor> \{('$\times$' | '/') <factor>\}
+ 
+   <factor> ::= <number> | <identifier> | '(' <expression> ')'
+\end{grammar}
+
+\begin{syntdiag} % for expression
+    \begin{stack} \\
+        '+' \\
+        '-'
+    \end{stack}
+    \begin{rep}
+        <term> \\
+        \begin{stack} 
+            '+' \\
+            '-'
+        \end{stack}
+    \end{rep}
+\end{syntdiag}
+
+\begin{syntdiag} % for term
+    \begin{rep}
+        <factor> \\
+        \begin{stack} 
+            '$\times$' \\
+            '/'
+        \end{stack}
+    \end{rep}
+\end{syntdiag}
+
+\begin{syntdiag} % for factor
+    \begin{stack} 
+        <number> \\
+        <identifier> \\
+        '(' <expression> ')'
+    \end{stack}
+\end{syntdiag}
+
+\begin{grammar}
+    <expression> ::=
+    \begin{syntdiag} % for expression
+        \begin{stack} \\
+            '+' \\
+            '-'
+        \end{stack}
+        \begin{rep}
+            <term> \\
+            \begin{stack} 
+                '+' \\
+                '-'
+            \end{stack}
+        \end{rep}
+    \end{syntdiag}
+
+    <term> ::=
+    \begin{syntdiag} % for term
+        \begin{rep}
+            <factor> \\
+            \begin{stack} 
+                '$\times$' \\
+                '/'
+            \end{stack}
+        \end{rep}
+    \end{syntdiag}
+
+    <factor> ::=
+    \begin{syntdiag} % for factor
+        \begin{stack} 
+            <number> \\
+            <identifier> \\
+            '(' <expression> ')'
+        \end{stack}
+    \end{syntdiag}
+\end{grammar}
+
+\end{document}
